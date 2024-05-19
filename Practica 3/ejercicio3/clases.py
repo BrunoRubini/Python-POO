@@ -61,6 +61,7 @@ class Usuario(Persona):
         self._administrador = False
         self._fecha_alta = date.today()
         self._fecha_baja = None
+        self.libros_leidos = []
 
     @property
     def user_name(self):
@@ -82,12 +83,22 @@ class Usuario(Persona):
         self._estado = False
         self._fecha_baja = date.today()
 
-    def add_libro(self, libro):
-        
-        pass
+    
+    def add_libro(self):
+        i = 0
+        print("Seleccione un libro de la lista para agregar a tu coleccion: ")
+        for l in datos.lista_libros:
+            print(str(i) + "- Libro: " + l.nombre + " ISBN: " + str(l.isbn))
+            i+=1
+        opcion = int(input("Ingrese numero de libro: "))
+        l = datos.lista_libros[opcion]
+        self.libros_leidos.append(l)
+        return self.libros_leidos
 
-    def remove_libro(self, libro):
-        
+    def remove_libro(self, l):
+        #self.libros_leidos.pop(l)
+        #del self.libros_leidos[l]
+        self.libros_leidos.remove(l)
         pass
 
     def mostrar_informacion(self):

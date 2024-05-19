@@ -60,6 +60,20 @@ def validar_contraseña(password)->bool:
     return False
 
 def buscar_usuario():
-    pass
+    lista_usuarios = datos.retornar_lista()
+    user = input("Ingrese nombre de usuario a buscar: ")
+    for u in lista_usuarios:
+        if user == u._user_name:
+            print("usuario encontrado")
+            print(u.user_name + u._apellido)
+            return      
+    print("Usuario no encontrado")
+    
 def buscar_libro():
-    pass
+    isbn = input("Ingrese ISBN del libro a buscar: ")
+    for l in datos.lista_libros:
+        if isbn == l.isbn:
+            print("Libro encontrado: ")
+            print(l)
+            return
+    print("Libro no encontrado")

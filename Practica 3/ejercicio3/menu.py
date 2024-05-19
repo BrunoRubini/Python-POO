@@ -8,14 +8,13 @@ def login():
     passw = input("Ingrese contraseña: ")
     for usuario in listaUsuarios:
         if usuario._user_name == user:
-            print(usuario._user_name)
-            print(usuario._password )
             if usuario.validar_credenciales(user, passw):
                 Menu(usuario)
+                return
             else:
-                #si devuelve false es porque estaban mal o el usuario o la contraseña y en ese caso le mostramos un mensaje de error
                 print("Datos incorrectos.")
-    
+                return
+    print("Usuario no encontrado")
 
 
 def Menu(usuario: clases.Usuario):
@@ -45,13 +44,21 @@ def Menu(usuario: clases.Usuario):
             #pedir un user_name para buscar sus libros
             usuario.mostrar_libros_leidos() # pasar como parametro un user_name
         elif opcion_menu == 5:
+
             usuario.add_libro()
         elif opcion_menu == 6:
-            usuario.remove_libro()
+            i = 0
+            for l in usuario.libros_leidos:
+                print("Opción: "+str(i) +" - Libro: " + l.nombre + " Autor: " + l.autor + " ISBN: " + str(l.isbn))
+                i+=1
+            opcion = int(input("Ingrese numero de libro a eliminar: "))
+            l = usuario.libros_leidos[opcion]
+            usuario.remove_libro(l)
         elif opcion_menu == 7:
             print("Cerrando sesion.")
             login()
+            break
         else:
             print("Opción incorrecta.")
-    pass
-login()
+while True:  
+    login()
