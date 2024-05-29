@@ -11,7 +11,7 @@ class Usuario(Persona):
     def __init__(self, user_name:str, password:str, email:str, nombre: str, apellido: str, fecha_nacimiento: date, nro_documento: int, tipo_documento:TipoDocumento,administrator:bool = False) -> None:
         self.__user_name = Usuario.__validar_user_name(user_name)
         self.__password = password
-        self.__estado = True #no recibivo el valor por parametro en el constructor, porque lo seteo derecho.
+        self.__estado = True #no recibo el valor por parametro en el constructor, porque lo seteo derecho.
         self.__administrator = administrator
         self.__email = email
         self.__fecha_alta = date.today() #genero la fecha del dia

@@ -17,4 +17,4 @@ libros = [Libro('El principito', date(1960, 5, 22), "Jorge Landeta"),
 
 tipo_dni = tipos_documento[0]
 usuarios = [Usuario('mvaloni', 'ads123', 'mechi@gmail.com', 'Mercedes', 'Valoni', date(1998, 6, 2), 33333333, tipo_dni, True),
-            Usuario('cristopher', 'banana', 'c@gmail.com', 'Cristopher', 'Ninotti', date(1989, 2, 2), 33333333, tipo_dni)]
+        Usuario('cristopher', 'banana', 'c@gmail.com', 'Cristopher', 'Ninotti', date(1989, 2, 2), 33333333, tipo_dni)]

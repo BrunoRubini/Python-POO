@@ -7,7 +7,7 @@ class Persona(ABC):
     #decoro el constructor con abstactmethod para impedir que se cree un obj de esta clase
     @abstractmethod
     def __init__(self, nombre:str, apellido:str, fecha_nacimiento:date, nro_documento:int, tipo_documento:TipoDocumento) -> None:
-        self._nombre = nombre #atributo protejido
+        self._nombre = nombre #atributo protegido
         self._apellido = apellido
         self._fecha_nacimiento = fecha_nacimiento
         self._nro_documento = nro_documento

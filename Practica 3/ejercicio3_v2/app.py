@@ -10,7 +10,7 @@ def menu_admin():
 
 def menu_usuario():
     return '''4. Ver mis libros
-5. Aregar libro a mi coleccion
+5. Agregar libro a mi coleccion
 6. Eliminar libro de mi coleccion
 7. Cerrar sesión'''
 
